@@ -31,34 +31,32 @@ public class VectorHelper {
      * 
      * @param tab
      */
-    public void TriSelect()
-{
-  for (int i=0;i<=tab.length-1;i++)
-   { int m=i;
-     for(int j=i+1;j<=tab.length-1;j++)
-       { if (tab[j]<tab[m]) 
-          m=j;
-       }
-         int tmp=tab[m];
-         tab[m]=tab[i];
-         tab[i]=tmp;}
-           
- }
+    public void TriSelect(){
+        for (int i=0;i<=tab.length-1;i++){ 
+            int m=i;
+            for(int j=i+1;j<=tab.length-1;j++){
+                if (tab[j]<tab[m]) 
+                    m=j;
+            }
+            int tmp=tab[m];
+            tab[m]=tab[i];
+            tab[i]=tmp;
+        }       
+    }
 
     /**
      *la methode inverser tableau qui permet d'inverser les elements d'un tableau
      * @param tab
      */
-    public void Inverser()
-{   int k=tab.length-1;
-    for (int p=0;p<(tab.length)/2;p++)
-    {  int e=tab[p];
-        tab[p]=tab[k];
-        tab[k]=e;
-        k--;
+    public void Inverser(){
+        int k=tab.length-1;
+        for (int p=0;p<(tab.length)/2;p++){  
+            int e=tab[p];
+            tab[p]=tab[k];
+            tab[k]=e;
+            k--;
+        }
     }
-   
-}
 
     /**
      * la methode somme permet de calculer la somme des elements de deux tableau 
@@ -66,26 +64,17 @@ public class VectorHelper {
      * @param tab1
      * @param tab2
      * @return
-     * @throws Exeption
+     * @throws DiffirenteTailleException
      */
-    public int[] Somme (int[] tab1,int taille) throws Exeption{ 
+    public int[] Somme (int[] tab1,int taille) throws DiffirenteTailleException{ 
         int i;
-        
-        try
-        {  
-            if (taille!=this.taille) throw new Exeption();
-        }
-        catch(ArrayIndexOutOfBoundsException ex )
-        {
-
-        }
         int[] result = new int[this.taille];
-        for ( i=0;i<this.taille;i++)
-        {
-            result[i]=this.tab[i]+tab1[i];
+        if (taille!=this.taille) throw new DiffirenteTailleException();
+        else{
+           for ( i=0;i<this.taille;i++){
+                result[i]=this.tab[i]+tab1[i];
+           } 
         }
-
         return result;      
-}
-
+    }
 }
