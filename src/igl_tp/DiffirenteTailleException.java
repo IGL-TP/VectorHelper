@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * La class DiffrenteTailleException
+ *  pour gérer l'exception de la taille diffirente des tableaux.
  */
 package igl_tp;
 
@@ -11,10 +10,18 @@ package igl_tp;
  */
 public class DiffirenteTailleException extends Exception{
 
+    /**
+     *le constructeur qui affiche un message d'erreur
+     */
     public DiffirenteTailleException() {
         System.out.println("la taille des tableaux n'est pas la meme");
         this.printStackTrace();
     }
+
+    /**
+     *Redifinition de la methode getMessage
+     * @return
+     */
     @Override
     public String getMessage() {
         super.getMessage();
