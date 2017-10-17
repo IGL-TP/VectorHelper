@@ -15,7 +15,8 @@ import static java.lang.Math.min;
 public class VectorHelper {
     private int taille;
     protected int [] tab=new int [100];
-
+    private int max = 0;
+    private int min = 0; 
     /**
      * le constrecteur de la classe Vector Helper qui permet d'initialiser les attributs de cette classe
      * @param taille 
@@ -25,7 +26,37 @@ public class VectorHelper {
         this.taille = taille;
         this.tab=tab;
     }
+    /**
+     *récuperer la taille du tableau
+     * @return
+     */
+    public int getTaille() {
+        return taille;
+    }
 
+    /**
+     *récuperer le tableau d'elements
+     * @return
+     */
+    public int[] getTabElement() {
+        return tab;
+    }
+
+    /**
+     * recuperer le max 
+     * @return
+     */
+    public int getMax() {
+        return max;
+    }
+
+    /**
+     *recuperer le min
+     * @return
+     */
+    public int getMin() {
+        return min;
+    }
     /**
      * la methode tri_tableau par selection  qui permet de trier les elements d'un tableau  
      * 
