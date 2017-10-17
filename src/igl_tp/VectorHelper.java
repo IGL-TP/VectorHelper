@@ -32,6 +32,14 @@ public class VectorHelper {
          tab[m]=tab[i];
          tab[i]=tmp;}
            
- }  
+ }
+  public void Inverser(int []tab)
+{   int k=tab.length-1;
+    for (int p=0;p<(tab.length)/2;p++)
+    {  int e=tab[p];
+        tab[p]=tab[k];
+        tab[k]=e;
+        k--;
+    }
    
 }
