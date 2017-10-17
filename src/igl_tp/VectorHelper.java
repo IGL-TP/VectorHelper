@@ -108,4 +108,17 @@ public class VectorHelper {
         }
         return result;      
     }
+    /**
+     * la methode qui calcule simultanemant le max et le min 
+     */
+    public void maxETmin(){
+        this.max=tab[0];
+        this.min=tab[0];
+        for (int i = 0; i < taille; i++) {
+            if(this.max < tab[i])
+                this.max = tab[i];
+            if(this.min > tab[i])
+                this.min = tab[i];
+        }
+    }
 }
