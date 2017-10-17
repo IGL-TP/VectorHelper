@@ -10,17 +10,28 @@ import static java.lang.Math.min;
 
 /**
  *
- * @author khaled_mhz
+ * @author Boudjedar Sabrina
  */
 public class VectorHelper {
     private int taille;
-    private int  tab[]=new int [100];
+    private int [] tab=new int [100];
 
+    /**
+     * le constrecteur de la classe Vector Helper qui permet d'initialiser les attributs de cette classe
+     * @param taille 
+     * @param tab
+     */
     public VectorHelper(int taille,int []tab) {
         this.taille = taille;
         this.tab=tab;
     }
-  public void TriSelect(int []tab)
+
+    /**
+     * la methode tri_tableau par selection  qui permet de trier les elements d'un tableau  
+     * 
+     * @param tab
+     */
+    public void TriSelect()
 {
   for (int i=0;i<=tab.length-1;i++)
    { int m=i;
@@ -33,7 +44,12 @@ public class VectorHelper {
          tab[i]=tmp;}
            
  }
-  public void Inverser(int []tab)
+
+    /**
+     *la methode inverser tableau qui permet d'inverser les elements d'un tableau
+     * @param tab
+     */
+    public void Inverser()
 {   int k=tab.length-1;
     for (int p=0;p<(tab.length)/2;p++)
     {  int e=tab[p];
@@ -43,8 +59,17 @@ public class VectorHelper {
     }
    
 }
-  public int[] Somme (int[] tab1,int[]tab2) throws Exeption
-{    int[] tab3 = new int[tab1.length] ; int i;
+
+    /**
+     * la methode somme permet de calculer la somme des elements de deux tableau 
+     * cette methode lance une exception si les deux tableux n'ont pas la meme taille 
+     * @param tab1
+     * @param tab2
+     * @return
+     * @throws Exeption
+     */
+    public int[] Somme (int[] tab1,int[]tab2) throws Exeption
+{    int[] tab = new int[min (tab1.length,tab2.length)] ; int i;
  try
  {  
      if (tab1.length!=tab2.length) throw new Exeption();
@@ -56,9 +81,9 @@ public class VectorHelper {
  
    for ( i=0;i<min (tab1.length,tab2.length);i++)
    {
-    tab3[i]=tab1[i]+tab2[i];
+    tab[i]=tab1[i]+tab2[i];
    }
 
- return tab3;      
+ return tab;      
 }
 }
