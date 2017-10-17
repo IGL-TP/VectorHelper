@@ -13,6 +13,7 @@ public class DiffirenteTailleException extends Exception{
 
     public DiffirenteTailleException() {
         System.out.println("la taille des tableaux n'est pas la meme");
+        this.printStackTrace();
     }
     @Override
     public String getMessage() {
