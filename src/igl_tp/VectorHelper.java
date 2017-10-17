@@ -43,3 +43,22 @@ public class VectorHelper {
     }
    
 }
+  public int[] Somme (int[] tab1,int[]tab2) throws Exeption
+{    int[] tab3 = new int[tab1.length] ; int i;
+ try
+ {  
+     if (tab1.length!=tab2.length) throw new Exeption();
+ }
+ catch(ArrayIndexOutOfBoundsException ex )
+ {
+      
+ }
+ 
+   for ( i=0;i<min (tab1.length,tab2.length);i++)
+   {
+    tab3[i]=tab1[i]+tab2[i];
+   }
+
+ return tab3;      
+}
+}
