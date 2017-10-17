@@ -14,7 +14,7 @@ import static java.lang.Math.min;
  */
 public class VectorHelper {
     private int taille;
-    private int [] tab=new int [100];
+    protected int [] tab=new int [100];
 
     /**
      * le constrecteur de la classe Vector Helper qui permet d'initialiser les attributs de cette classe
@@ -68,22 +68,24 @@ public class VectorHelper {
      * @return
      * @throws Exeption
      */
-    public int[] Somme (int[] tab1,int[]tab2) throws Exeption
-{    int[] tab = new int[min (tab1.length,tab2.length)] ; int i;
- try
- {  
-     if (tab1.length!=tab2.length) throw new Exeption();
- }
- catch(ArrayIndexOutOfBoundsException ex )
- {
-      
- }
- 
-   for ( i=0;i<min (tab1.length,tab2.length);i++)
-   {
-    tab[i]=tab1[i]+tab2[i];
-   }
+    public int[] Somme (int[] tab1,int taille) throws Exeption{ 
+        int i;
+        
+        try
+        {  
+            if (taille!=this.taille) throw new Exeption();
+        }
+        catch(ArrayIndexOutOfBoundsException ex )
+        {
 
- return tab;      
+        }
+        int[] result = new int[this.taille];
+        for ( i=0;i<this.taille;i++)
+        {
+            result[i]=this.tab[i]+tab1[i];
+        }
+
+        return result;      
 }
+
 }
