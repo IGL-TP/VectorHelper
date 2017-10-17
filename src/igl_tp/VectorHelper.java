@@ -109,6 +109,7 @@ public class VectorHelper {
         return result;      
     }
     /**
+     * 
      * la methode qui calcule simultanemant le max et le min 
      */
     public void maxETmin(){
@@ -122,6 +123,7 @@ public class VectorHelper {
         }
     }
      /**
+      * 
      *la méthode qui utilise une formule (la moyenne)
      * @return
      */
