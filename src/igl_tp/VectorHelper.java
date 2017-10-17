@@ -20,9 +20,7 @@ public class VectorHelper {
         this.taille = taille;
         this.tab=tab;
     }
-    
-   
-public void TriSelect(int []tab)
+  public void TriSelect(int []tab)
 {
   for (int i=0;i<=tab.length-1;i++)
    { int m=i;
@@ -34,4 +32,6 @@ public void TriSelect(int []tab)
          tab[m]=tab[i];
          tab[i]=tmp;}
            
- }}
+ }  
+   
+}
