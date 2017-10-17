@@ -121,4 +121,16 @@ public class VectorHelper {
                 this.min = tab[i];
         }
     }
+     /**
+     *la méthode qui utilise une formule (la moyenne)
+     * @return
+     */
+    public int moyenne() {
+        int result =0;
+        for (int i = 0; i < this.taille; i++) {
+            result+=this.tab[i];
+        }
+        result=result/taille;
+        return result;
+    }
 }
