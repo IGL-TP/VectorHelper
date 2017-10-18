@@ -14,10 +14,15 @@ import static java.lang.Math.min;
  */
 public class VectorHelper {
     private int taille;
+
+    /**
+     *
+     */
     protected int [] tab=new int [100];
     private int max = 0;
     private int min = 0; 
     /**
+     * @author Boudjedar Sabrina
      * le constrecteur de la classe Vector Helper qui permet d'initialiser les attributs de cette classe
      * @param taille 
      * @param tab
@@ -27,40 +32,44 @@ public class VectorHelper {
         this.tab=tab;
     }
     /**
+     * @author Bouhenniche Sihem
      *récuperer la taille du tableau
-     * @return
+     * @return int la taille du tableau
      */
     public int getTaille() {
         return taille;
     }
 
     /**
+     * @author Bouhenniche Sihem
      *récuperer le tableau d'elements
-     * @return
+     * @return tableau d'elements
      */
     public int[] getTabElement() {
         return tab;
     }
 
     /**
+     * @author Bouhenniche Sihem
      * recuperer le max 
-     * @return
+     * @return int maximum
      */
     public int getMax() {
         return max;
     }
 
     /**
+     * @author Bouhenniche Sihem
      *recuperer le min
-     * @return
+     * @return int minimum
      */
     public int getMin() {
         return min;
     }
     /**
+     * @author Boudjedar Sabrina
      * la methode tri_tableau par selection  qui permet de trier les elements d'un tableau  
      * 
-     * @param tab
      */
     public void TriSelect(){
         for (int i=0;i<=tab.length-1;i++){ 
@@ -76,8 +85,8 @@ public class VectorHelper {
     }
 
     /**
+     * @author Boudjedar Sabrina
      *la methode inverser tableau qui permet d'inverser les elements d'un tableau
-     * @param tab
      */
     public void Inverser(){
         int k=tab.length-1;
@@ -90,11 +99,12 @@ public class VectorHelper {
     }
 
     /**
+     * @author Boudjedar Sabrina
      * la methode somme permet de calculer la somme des elements de deux tableau 
      * cette methode lance une exception si les deux tableux n'ont pas la meme taille 
      * @param tab1
-     * @param tab2
-     * @return
+     * @param taille
+     * @return tableau de la somme des deux tableau en entrée
      * @throws DiffirenteTailleException
      */
     public int[] Somme (int[] tab1,int taille) throws DiffirenteTailleException{ 
@@ -109,7 +119,7 @@ public class VectorHelper {
         return result;      
     }
     /**
-     * 
+     * @author Bouhenniche Sihem
      * la methode qui calcule simultanemant le max et le min 
      */
     public void maxETmin(){
@@ -123,9 +133,9 @@ public class VectorHelper {
         }
     }
      /**
-      * 
+      * @author Bouhenniche Sihem
      *la méthode qui utilise une formule (la moyenne)
-     * @return
+     * @return int la moyenne du vecteur
      */
     public int moyenne() {
         int result =0;
