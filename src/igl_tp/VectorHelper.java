@@ -74,7 +74,7 @@ public class VectorHelper {
     public void TriSelect(){
         for (int i=0;i<=tab.length-1;i++){ 
             int m=i;
-            for(int j=i+1;j<=tab.length;j++){
+            for(int j=i+1;j<=tab.length-1;j++){
                 if (tab[j]<tab[m]) 
                     m=j;
             }
