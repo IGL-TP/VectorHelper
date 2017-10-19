@@ -38,7 +38,7 @@ public class VectorHelper {
      *récuperer le tableau d'elements
      * @return
      */
-    public int[] getTabElement() {
+    public int[] getTab() {
         return tab;
     }
 
