@@ -125,9 +125,9 @@ public class VectorHelper {
      * @author Boudjedar Sabrina
      */
     public void triSelection(){
-        for (int i=0;i<=tab.length-1;i++){ 
+        for (int i=0;i<=taille-1;i++){ 
             int m=i;
-            for(int j=i+1;j<=tab.length-1;j++){
+            for(int j=i+1;j<=taille-1;j++){
                 if (tab[j]<tab[m]) 
                     m=j;
             }
