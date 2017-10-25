@@ -194,31 +194,7 @@ public class VectorHelper {
         return result;      
     }
   //---------
-    /**
-     * <p>
-     * Calculer simultanemant le maximum et le minimum d'un vecteur. <br>
-     *  Exemple d'utilisation: </p>
-     * <ul>
-     *      <li>le vecteur vect : {4,2,1,5,3}</li>
-     *      <li>vect.maxETmin();</li>
-     *      <li>max = 5 et min = 1</li>
-     * </ul> 
-     * @see VectorHelper#taille
-     * @see VectorHelper#tab
-     * @see VectorHelper#max
-     * @see VectorHelper#min
-     * @author Bouhenniche Sihem
-     */
-    public void maxETmin(){
-        this.max=tab[0];
-        this.min=tab[0];
-        for (int i = 0; i < taille; i++) {
-            if(this.max < tab[i])
-                this.max = tab[i];
-            if(this.min > tab[i])
-                this.min = tab[i];
-        }
-    }
+    
      /**
       * <p>
       * Calculer la moyenne d'un vecteur.
