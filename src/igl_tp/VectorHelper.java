@@ -1,39 +1,83 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package igl_tp;
 
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
 /**
- *
- * @author Boudjedar Sabrina
+ *<b>La class VectorHelper : représentation d'un vecteur offrant des manipulations et basic opérations.</b>
+ *<p>Les attributs : </p>
+ *  <ul>
+ *      <li>Un entier contenant le nombre d'éléments existants dans ce vecteur(taille).</li>
+ *      <li>Un tableau d'entiers contenant les éléments du vecteur.</li>
+ *      <li>Un entier contenant la maximum d'un vecteur.</li>
+ *      <li>Un entier contenant la minimum d'un vecteur.</li>
+ * </ul>
+ * @see DiffirenteTailleException
+ * @author Boudjedar Sabrina - Bouhenniche Sihem
+ * @version 1.0
  */
 public class VectorHelper {
+    /**
+     *La taille du vecteur, c'est un entier supérieur ou égal à 0.
+     * @see VectorHelper#VectorHelper(int, int[]) 
+     * @see VectorHelper#getTaille() 
+     * @see VectorHelper#Somme(int[], int) 
+     * @see VectorHelper#maxETmin() 
+     * @see VectorHelper#moyenne() 
+     */
     private int taille;
 
     /**
-     *
+     *Le tableau d'entiers contenant les éléments du vecteur.
+     * @see VectorHelper#VectorHelper(int, int[]) 
+     * @see VectorHelper#getTabElements()
+     * @see VectorHelper#TriSelect() 
+     * @see VectorHelper#Inverser() 
+     * @see VectorHelper#Somme(int[], int) 
+     * @see VectorHelper#maxETmin() 
+     * @see VectorHelper#moyenne()
      */
-    protected int [] tab=new int [100];
-    private int max = 0;
-    private int min = 0; 
+    private int [] tab=new int [100];
+    
     /**
-     * @author Boudjedar Sabrina
-     * le constrecteur de la classe Vector Helper qui permet d'initialiser les attributs de cette classe
+     *La valeur maximale du vecteur, c'est un entier supérieur ou égal à 0.
+     * @see VectorHelper#getMax() 
+     * @see VectorHelper#maxETmin() 
+     */
+    private int max = 0;
+    
+    /**
+     *La valeur minimale du vecteur, c'est un entier supérieur ou égal à 0.
+     * @see VectorHelper#getMin() 
+     * @see VectorHelper#maxETmin() 
+     */
+    private int min = 0; 
+    
+    /**
+     * <p>
+     * Le constrecteur de la classe VectorHelper avec initialisation des attributs : 
+     * <ul>
+     *      <li>taille.</li>
+     *      <li>tab</li>
+     * </ul>
+     * <p>
      * @param taille 
+     *          La taille du vecteur.
      * @param tab
+     *          Le tableau d'éléments.
+     * @see VectorHelper#taille
+     * @see VectorHelper#tab
+     * @author Boudjedar Sabrina
      */
     public VectorHelper(int taille,int []tab) {
         this.taille = taille;
         this.tab=tab;
     }
     /**
+     * Récuperer la taille du vecteur.
+     * @see VectorHelper#taille
      * @author Bouhenniche Sihem
-     *récuperer la taille du tableau
      * @return int la taille du tableau
      */
     public int getTaille() {
@@ -41,16 +85,18 @@ public class VectorHelper {
     }
 
     /**
+     * Récuperer le tableau d'elements du vecteur.
+     * @see VectorHelper#tab
      * @author Bouhenniche Sihem
-     *récuperer le tableau d'elements
-     * @return tableau d'elements
+     * @return int[] tableau d'elements
      */
      public int [] getTab (){
          return tab;
        }
     /**
+     * Récuperer la valeur maximale du vecteur.
+     * @see VectorHelper#max
      * @author Bouhenniche Sihem
-     * recuperer le max 
      * @return int maximum
      */
     public int getMax() {
@@ -58,19 +104,27 @@ public class VectorHelper {
     }
 
     /**
+     * Récuperer la valeur minimale du vecteur.
+     * @see VectorHelper#min
      * @author Bouhenniche Sihem
-     *recuperer le min
      * @return int minimum
      */
     public int getMin() {
         return min;
     }
     /**
+     *<p>
+     * Trier les éléments du vecteur par sélection en ordre croissant.<br>
+     * Exemple d'utilisation: </p>
+     * <ul>
+     *      <li>le vecteur vect : {4,2,1,5,3}</li>
+     *      <li>vect.TriSelect();</li>
+     *      <li>le vecteur vect devient : {1,2,3,4,5}</li>
+     * </ul>
+     * @see VectorHelper#tab
      * @author Boudjedar Sabrina
-     * la methode tri_tableau par selection  qui permet de trier les elements d'un tableau  
-     * 
      */
-    public void TriSelect(){
+    public void triSelection(){
         for (int i=0;i<=tab.length-1;i++){ 
             int m=i;
             for(int j=i+1;j<=tab.length-1;j++){
@@ -84,8 +138,16 @@ public class VectorHelper {
     }
 
     /**
+     * <p>
+     * Inverser les éléments du vecteur.<br>
+     * Exemple d'utilisation: </p>
+     * <ul>
+     *      <li>le vecteur vect : {4,2,1,5,3}</li>
+     *      <li>vect.Inverser();</li>
+     *      <li>le vecteur vect devient : {3,5,1,2,4}</li>
+     * </ul>
+     * @see VectorHelper#tab
      * @author Boudjedar Sabrina
-     *la methode inverser tableau qui permet d'inverser les elements d'un tableau
      */
     public void Inverser(){
         int k=tab.length-1;
@@ -96,15 +158,28 @@ public class VectorHelper {
             k--;
         }
     }
-
+//Sabrina
     /**
-     * @author Boudjedar Sabrina
-     * la methode somme permet de calculer la somme des elements de deux tableau 
-     * cette methode lance une exception si les deux tableux n'ont pas la meme taille 
-     * @param tab1
+     * <p>
+     * Calculer la somme des éléments de deux vecteurs.<br> 
+     * cette methode lance une exception si les deux tableux n'ont pas la meme taille.<br>
+     * Exemple d'utilisation: </p>
+     * <ul>
+     *      <li>le vecteur vect : {4,2,1,5,3}</li>
+     *      <li>les paramétres : tab1 {1,2,3,4,5} taille 5</li>
+     *      <li>vect.Somme(tab1,taille);</li>
+     *      <li>le resultat est : {5,4,4,9,8}</li>
+     * </ul>
+     * @param tab1 
+     *          le tableau en entré
      * @param taille
-     * @return tableau de la somme des deux tableau en entrée
-     * @throws DiffirenteTailleException
+     *          la taille du tableau en entré
+     * @return int[] le resultat de la somme.
+     * @throws DiffirenteTailleException déclanchement de l'exception DiffirenteTailleException
+     * @see DiffirenteTailleException
+     * @see VectorHelper#taille
+     * @see VectorHelper#tab
+     * @author Boudjedar Sabrina
      */
     public int[] Somme (int[] tab1,int taille) throws DiffirenteTailleException{ 
         int i;
@@ -117,9 +192,21 @@ public class VectorHelper {
         }
         return result;      
     }
+  //---------
     /**
+     * <p>
+     * Calculer simultanemant le maximum et le minimum d'un vecteur. <br>
+     *  Exemple d'utilisation: </p>
+     * <ul>
+     *      <li>le vecteur vect : {4,2,1,5,3}</li>
+     *      <li>vect.maxETmin();</li>
+     *      <li>max = 5 et min = 1</li>
+     * </ul> 
+     * @see VectorHelper#taille
+     * @see VectorHelper#tab
+     * @see VectorHelper#max
+     * @see VectorHelper#min
      * @author Bouhenniche Sihem
-     * la methode qui calcule simultanemant le max et le min 
      */
     public void maxETmin(){
         this.max=tab[0];
@@ -132,9 +219,18 @@ public class VectorHelper {
         }
     }
      /**
+      * <p>
+      * Calculer la moyenne d'un vecteur.
+      * Exemple d'utilisation: </p>
+      * <ul>
+      *      <li>le vecteur vect : {4,2,1,5,3}</li>
+      *      <li>vect.moyenne();</li>
+      *      <li>le resultat : (4+2+1+5+3)/5 = 3</li>
+      * </ul>
+      * @return int la moyenne du vecteur
+      * @see VectorHelper#taille
+      * @see VectorHelper#tab
       * @author Bouhenniche Sihem
-     *la méthode qui utilise une formule (la moyenne)
-     * @return int la moyenne du vecteur
      */
     public int moyenne() {
         int result =0;

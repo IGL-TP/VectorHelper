@@ -1,12 +1,9 @@
-/*
- * La class DiffrenteTailleException
- *  pour gérer l'exception de la taille diffirente des tableaux.
- */
+
 package igl_tp;
 
 /**
- *
- * @author khaled_mhz
+ * <b>La class DiffirenteTailleException : excption lancé quand les taille des vecteurs sont différentes.</b>
+ * @author Boudjedar Sabrina -Bouhenniche Sihem
  */
 public class DiffirenteTailleException extends Exception{
 
@@ -20,7 +17,7 @@ public class DiffirenteTailleException extends Exception{
 
     /**
      *Redifinition de la methode getMessage
-     * @return
+     * @return string message d'erreur
      */
     @Override
     public String getMessage() {
