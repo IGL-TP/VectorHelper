@@ -159,7 +159,7 @@ public class VectorHelper {
             k--;
         }
     }
-
+//Sabrina
     /**
      * <p>
      * Calculer la somme des éléments de deux vecteurs.<br> 
@@ -193,6 +193,7 @@ public class VectorHelper {
         }
         return result;      
     }
+  //---------
     /**
      * <p>
      * Calculer simultanemant le maximum et le minimum d'un vecteur. <br>
