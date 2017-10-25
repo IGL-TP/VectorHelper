@@ -125,7 +125,7 @@ public class VectorHelper {
      * @see VectorHelper#tab
      * @author Boudjedar Sabrina
      */
-    public void triSelection(){
+    public void triSelect(){
         for (int i=0;i<=tab.length-1;i++){ 
             int m=i;
             for(int j=i+1;j<=tab.length-1;j++){
